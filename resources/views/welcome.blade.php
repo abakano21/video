@@ -17,7 +17,7 @@
 <body class="antialiased">
     <div class="container mx-auto px-4 mt-20">
 
-        <form action="/upload" method="POST" enctype="multipart/form-data" class="space-y-8 divide-y divide-gray-200">
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="space-y-8 divide-gray-200 my-10">
             @csrf()
             <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
                 <div>
@@ -47,11 +47,10 @@
                                                 <span>Upload a file</span>
                                                 <input id="file-upload" name="file" type="file" class="sr-only">
                                             </label>
-                                            <p class="pl-1">or drag and drop</p>
                                         </div>
-                                        <!-- <p class="text-xs text-gray-500">
-                                            PNG, JPG, GIF up to 10MB
-                                        </p> -->
+                                        <p class="text-gray-500">
+                                            Please upload file up to 5MB, because it render immeditely. Console command alredy created for rendering in the backend, but not used as of now!
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -63,17 +62,15 @@
 
             <div class="pt-5">
                 <div class="flex justify-end">
-                    <button type="button" class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        Cancel
-                    </button>
                     <button type="submit" class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        Save
+                        Upload
                     </button>
                 </div>
             </div>
         </form>
 
         <!-- Video list -->
+        <p class="text-xl font-bold px-2 py-3">File list</p>
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
