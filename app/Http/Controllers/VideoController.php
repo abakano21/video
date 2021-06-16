@@ -15,8 +15,11 @@ class VideoController extends Controller
 {
     public function welcome()
     {
+        $data = [];
         $directory = storage_path()."/uploads/videos";
-        $data['files'] = array_diff(scandir($directory), array('..', '.'));
+        if(is_dir($directory)) {
+            $data['files'] = array_diff(scandir($directory), array('..', '.'));
+        }
         return view('welcome', compact('data'));
     }
     
