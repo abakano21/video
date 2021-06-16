@@ -101,19 +101,19 @@
         }, function() {
             var player = this;
             player.updateSrc([{
-                    src: "{{ url('/') }}/storage/converted/{{ $data['video'] }}_1_1000.m3u8",
+                    src: "{{ url('/') }}/converted/{{ $data['video'] }}_1_1000.m3u8",
                     type: 'application/x-mpegURL',
                     label: '4K',
                     res: '4K'
                 },
                 {
-                    src: "{{ url('/') }}/storage/converted/{{ $data['video'] }}_2_750.m3u8",
+                    src: "{{ url('/') }}/converted/{{ $data['video'] }}_2_750.m3u8",
                     type: 'application/x-mpegURL',
                     label: 'FHD',
                     res: 'FHD'
                 },
                 {
-                    src: "{{ url('/') }}/storage/converted/{{ $data['video'] }}_0_500.m3u8",
+                    src: "{{ url('/') }}/converted/{{ $data['video'] }}_0_500.m3u8",
                     type: 'application/x-mpegURL',
                     label: 'HD',
                     res: 'HD'
