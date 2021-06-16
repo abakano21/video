@@ -19,14 +19,14 @@ class VideoController extends Controller
         $data['files'] = array_diff(scandir($directory), array('..', '.'));
         return view('welcome', compact('data'));
     }
+    
     public function store()
     {
         // Store video
         $videoId = Str::uuid();
         $file = request()->file('file');
-        $uploadedFile =  Storage::putFileAs('videos', request()->file('file'), "${videoId}.{$file->extension()}");
+        Storage::putFileAs('videos', request()->file('file'), "${videoId}.{$file->extension()}");
 
-        //
         $lowFormat  = (new X264('aac'))->setKiloBitrate(500);
         $midFormat = (new X264('aac'))->setKiloBitrate(750);
         $highFormat = (new X264('aac'))->setKiloBitrate(1000);
