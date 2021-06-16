@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 ini_set('max_execution_time', 120); 
+set_time_limit(50);
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
